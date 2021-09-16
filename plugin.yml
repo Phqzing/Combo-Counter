@@ -7,5 +7,6 @@ main: Phqzing\ComboCounter
 
 commands:
  combocounter:
+  description: "toggle combo counter"
   aliases: [cc, ccounter]
 ...
