@@ -27,7 +27,7 @@ class ComboCounter extends PluginBase implements Listener {
     $cause = $player->getLastDamageCause();
     
     if($cause instanceof EntityDamageByEntityEvent){
-      $damger = $cause->getDamager();
+      $damager = $cause->getDamager();
       if($damager instanceof Player and $player instanceof Player){
          if(isset($this->combo[$damager->getName()])){
            $this->combo[$damager->getName()]++;
