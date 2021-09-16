@@ -18,7 +18,7 @@ class ComboCounterTask extends Task {
     foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
       if(isset($this->plugin->combo[$players->getName()])){
         $counter = $this->plugin->getConfig()->get("counter");
-        $counter = str_replace("{combo}", $this->plugin->combo[$players->getName()}, $counter);
+        $counter = str_replace("{combo}", $this->plugin->combo[$players->getName()], $counter);
         $players->sendTip($counter);
       }
     }
