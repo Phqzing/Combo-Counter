@@ -8,6 +8,7 @@ use pocketmine\utils\TextFormat as TE;
 use pocketmine\Player;
 use pocketmine\event\entity\{EntityDamageByEntityEvent, EntityDamageEvent};
 use pocketmine\event\player\{PlayerJoinEvent, PlayerQuitEvent};
+use pocketmine\command\{CommandSender, Command};
 
 class ComboCounter extends PluginBase implements Listener {
  
@@ -52,4 +53,23 @@ class ComboCounter extends PluginBase implements Listener {
       unset($this->combo[$player->getName()]); 
     }
   }
+   
+   public function onCommand(CommandSender $sender, Command $command, string $label, array $args):bool{
+    switch($command->getName()){
+     case "combocounter":
+      if($sender instanceof Player){
+       if(isset($this->combo[$sender->getName()})){
+        unset($this->combo[$sender->getName()]);
+        $sender->sendMessage(TE::RED."- Combo counter turned off");
+       }else{
+        $this->combo[$sender->getName()] = 0;
+        $sender->sendMessage(TE::GREEN."Combo counter turned on");
+       }
+      }else{
+       $sender->sendMessage("You can only use this command in game");
+      }
+      break;
+    }
+    return true;
+   }
 }
