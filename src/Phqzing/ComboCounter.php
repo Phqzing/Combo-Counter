@@ -11,7 +11,7 @@ use pocketmine\event\player\{PlayerJoinEvent, PlayerQuitEvent};
 
 class ComboCounter extends PluginBase implements Listener {
  
-  private $combo = [];
+  public $combo = [];
   
   public function onEnable(){
     @mkdir($this->getDataFolder());
