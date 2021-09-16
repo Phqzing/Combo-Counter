@@ -28,10 +28,10 @@ class ComboCounter extends PluginBase implements Listener {
     if($cause instanceof EntityDamageByEntityEvent){
       $damger = $cause->getDamager();
       if($damager instanceof Player and $player instanceof Player){
-         if(isset($this->combo[$damager->getName())){
+         if(isset($this->combo[$damager->getName()])){
            $this->combo[$damager->getName()]++;
          }
-         if(isset($this->combo[$player->getName())){
+         if(isset($this->combo[$player->getName()])){
            $this->combo[$player->getName()] = 0; 
          }
       }
@@ -48,7 +48,7 @@ class ComboCounter extends PluginBase implements Listener {
   public function onQuit(PlayerQuitEvent $ev){
     $player = $ev->getPlayer();
     
-    ifisset($this->combo[$player->getName())){
+    ifisset($this->combo[$player->getName()])){
       unset($this->combo[$player->getName()]); 
     }
   }
