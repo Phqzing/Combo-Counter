@@ -13,7 +13,7 @@ class ComboCounterTask extends Task {
     $this->plugin = $plugin;
   }
   
-  public function onRun(int $tick):void {
+  public function onRun(int $tick){
   
     foreach($this->plugin->getServer()->getOnlinePlayers() as $players){
       if(isset($this->plugin->combo[$players->getName()])){
