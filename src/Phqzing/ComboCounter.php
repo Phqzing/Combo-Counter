@@ -59,7 +59,7 @@ class ComboCounter extends PluginBase implements Listener {
     switch($command->getName()){
      case "combocounter":
       if($sender instanceof Player){
-       if(isset($this->combo[$sender->getName()})){
+       if(isset($this->combo[$sender->getName()])){
         unset($this->combo[$sender->getName()]);
         $sender->sendMessage(TE::RED."- Combo counter turned off");
        }else{
