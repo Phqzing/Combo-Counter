@@ -49,7 +49,7 @@ class ComboCounter extends PluginBase implements Listener {
   public function onQuit(PlayerQuitEvent $ev){
     $player = $ev->getPlayer();
     
-    ifisset($this->combo[$player->getName()])){
+    if(isset($this->combo[$player->getName()])){
       unset($this->combo[$player->getName()]); 
     }
   }
