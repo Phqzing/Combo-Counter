@@ -1,0 +1,8 @@
+---
+#set to false if you dont want it to be turned on by default
+on_by-default: true
+
+#here you can customize how to combo counter looks
+#use {combo} to show the players combo count
+counter: "combo: {combo}"
+...
