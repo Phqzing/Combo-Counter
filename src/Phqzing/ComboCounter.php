@@ -36,6 +36,7 @@ class ComboCounter extends PluginBase implements Listener {
            $this->combo[$player->getName()] = 0; 
          }
       }
+    }
   }
                                
   public function onJoim(PlayerJoinEvent $ev){
