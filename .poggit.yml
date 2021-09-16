@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Phqzing/Combo-Counter
+build-by-default: true
+branches:
+- main
+projects:
+  Combo-Counter:
+    path: ""
+...
