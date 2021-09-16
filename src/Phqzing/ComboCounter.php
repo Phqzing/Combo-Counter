@@ -13,13 +13,15 @@ use pocketmine\command\{CommandSender, Command};
 class ComboCounter extends PluginBase implements Listener {
  
   public $combo = [];
+  private static $instance;
   
   public function onEnable(){
+    self::$instance = $this;
     @mkdir($this->getDataFolder());
     $this->saveDefaultConfig();
     $this->getResource("config.yml");
     $this->getServer()->getPluginManager()->registerEvents($this, $this); 
-    $this->getScheduler()->scheduleRepeatingTask(new ComboCounterTask($this), 1);
+    $this->getScheduler()->scheduleRepeatingTask(new ComboCounterTask, 1);
   }
   
   public function onDamage(EntityDamageEvent $ev){
