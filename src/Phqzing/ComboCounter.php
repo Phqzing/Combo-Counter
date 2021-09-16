@@ -75,4 +75,8 @@ class ComboCounter extends PluginBase implements Listener {
     }
     return true;
    }
+ 
+  public static function getInstance(): ComboCounter {
+   return self::$instance;
+  }
 }
